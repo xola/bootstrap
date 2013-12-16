@@ -29,9 +29,12 @@
 
   var Tooltip = function (element, options) {
     this.init('tooltip', element, options);
-    $(element).on('show',function (e) {
-      e.stopPropagation();
-    }).on('hidden', function (e) {
+    $(element)
+      .on('show',function (e) {
+        e.stopPropagation();
+      }).on('hide', function (e) {
+        e.stopPropagation();
+      }).on('hidden', function (e) {
         e.stopPropagation();
       });
   }

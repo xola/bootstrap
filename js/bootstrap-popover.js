@@ -28,9 +28,12 @@
 
   var Popover = function (element, options) {
     this.init('popover', element, options)
-    $(element).on('show',function (e) {
-      e.stopPropagation();
-    }).on('hidden', function (e) {
+    $(element)
+      .on('show',function (e) {
+        e.stopPropagation();
+      }).on('hide', function (e) {
+        e.stopPropagation();
+      }).on('hidden', function (e) {
         e.stopPropagation();
       });
   }
