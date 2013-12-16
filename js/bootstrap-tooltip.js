@@ -28,7 +28,12 @@
   * =============================== */
 
   var Tooltip = function (element, options) {
-    this.init('tooltip', element, options)
+    this.init('tooltip', element, options);
+    $(element).on('show',function (e) {
+      e.stopPropagation();
+    }).on('hidden', function (e) {
+        e.stopPropagation();
+      });
   }
 
   Tooltip.prototype = {
